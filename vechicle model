@@ -1,0 +1,24 @@
+
+
+class Vehicle {
+    String brand;
+    void start() {
+        System.out.println(brand + " vehicle is starting.");
+    }
+}
+class Car extends Vehicle {
+    String model;
+    void displayDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.brand = "Thar";
+        myCar.model = "Thar Roxx";
+        myCar.start();
+        myCar.displayDetails();
+    }
+}
