@@ -40,5 +40,237 @@ class Main {
     }
         
     }
-
 }
+
+
+student information:
+
+class Student {
+   
+    String name;
+    int rollNo;
+    int marks;
+
+  
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Marks: " + marks);
+        System.out.println(); 
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+      
+        Student student1 = new Student();
+        student1.name = "John Doe";
+        student1.rollNo = 1;
+        student1.marks = 85;
+
+        Student student2 = new Student();
+        student2.name = "Jane Smith";
+        student2.rollNo = 2;
+        student2.marks = 92;
+
+       
+        student1.display();
+        student2.display();
+    }
+}
+
+
+
+Bank account:
+
+class BankAccount {
+     String accountNumber;
+     String holderName;
+     double balance;
+
+    public BankAccount(String accountNumber,String holderName,double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println(amount + " deposited successfully.");
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println(amount + " withdrawn successfully.");
+        } else {
+            System.out.println("Insufficient balance or invalid amount.");
+        }
+    }
+
+    public void displayBalance() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder: " + holderName);
+        System.out.println("Current Balance: " + balance);
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("1234567890", "Alice Johnson", 1000.0);
+
+        account.displayBalance();
+
+        account.deposit(500.0);
+        account.displayBalance();
+
+        account.withdraw(300.0);
+        account.displayBalance();
+
+        account.withdraw(1500.0);
+        account.displayBalance();
+    }
+}
+
+
+
+vechicle model: 
+
+class Vehicle {
+    String brand;
+    void start() {
+        System.out.println(brand + " vehicle is starting.");
+    }
+}
+class Car extends Vehicle {
+    String model;
+    void displayDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.brand = "Thar";
+        myCar.model = "Thar Roxx";
+        myCar.start();
+        myCar.displayDetails();
+    }
+}
+
+
+
+Animal Hierarchy:
+
+
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("This mammal walks on land.");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+
+public class AnimalHierarchy {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+
+     
+        dog.eat();  
+        dog.walk(); 
+        dog.bark();  
+    }
+}
+
+
+ Hierarchical Inheritance – Shape:
+
+
+class Shape {
+    void area() {
+        System.out.println("Calculating area of shape...");
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    void area() {
+        double result = Math.PI * radius * radius;
+        System.out.println("Area of Circle = " + result);
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+
+ 
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    void area() {
+        double result = length * width;
+        System.out.println("Area of Rectangle = " + result);
+    }
+}
+
+
+public class ShapeHierarchy {
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        c.area();
+        Rectangle r = new Rectangle(4, 6);
+        r.area();
+    }
+}
+
+
+ Super Keyword:
+
+
+class Person {
+    Person() {
+        System.out.println("Person created");
+    }
+}
+
+
+class Student extends Person {
+    Student() {
+        super(); 
+        System.out.println("Student created");
+    }
+}
+
+public class ConstructorChainingDemo {
+    public static void main(String[] args) {
+        Student s = new Student();
+    }
+}
+
