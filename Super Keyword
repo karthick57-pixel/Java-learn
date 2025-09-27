@@ -1,0 +1,22 @@
+ Super Keyword:
+
+
+class Person {
+    Person() {
+        System.out.println("Person created");
+    }
+}
+
+
+class Student extends Person {
+    Student() {
+        super(); 
+        System.out.println("Student created");
+    }
+}
+
+public class ConstructorChainingDemo {
+    public static void main(String[] args) {
+        Student s = new Student();
+    }
+}
